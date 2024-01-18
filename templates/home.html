@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <title>home</title>
+  <link rel="stylesheet" href="../static/style.css">
+</head>
+
+<body>
+  <header class="home-foot">
+    <a href="/"><h2>Book <span>Read</span></h2></a>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/about">About</a>
+      <a href="/testimony">Testimony</a>
+    </nav>
+    <!-- <p>$$name$$</p> -->
+    {% if data %}
+    <p><i class="fa-regular fa-user"></i><span>{{data}}</span></p>
+    {% else %}
+    <p><i class="fa-regular fa-user"></i>{{ name }}</p>
+    {% endif %}
+  </header>
+  <p class="date">Date: {{formatted_datetime}}</p>
+  <div class="books-container">
+    {% for book in books %}
+    <div class="eachbook" id="{{book.id}}">
+      <img src="{{book.image}}" alt="{{book.title}}">
+      <div class="info">
+        <h3 id="bookTitle">{{book.title}}</h3>
+        <h4>{{book.writer()}}</p4>
+        <p>{{book.disc}}</p>
+        <div class="btns">
+          <a href="{{ url_for('read_pdf', pdf_book=book.pdfBook) }}" target="_blank">Read</a>
+          <a href="{{ url_for('read_pdf', pdf_book=book.pdfBook) }}" download>Download</a>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+
+  <footer class="home-foot">
+    <a href="/"><h2>Book <span>Read</span></h2></a>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/about">About</a>
+      <a href="/testimony">Testimony</a>
+    </nav>
+    <div class="media">
+      <a href="#"><i class="fa-brands fa-facebook fa-2x"></i></a>
+      <a href="#"><i class="fa-brands fa-instagram fa-2x"></i></a>
+      <a href="#"><i class="fa-brands fa-whatsapp fa-2x"></i></a>
+    </div>
+  </footer>
+</body>
+
+</html>
