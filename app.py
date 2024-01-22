@@ -52,9 +52,6 @@ def home():
     data_list.pop()
     books = read_json()
 
-    # if data.strip() !="": #if there is already name in the file render home.html
-    #     return render_template("home.html" , data=data, formatted_datetime=formatted_datetime, books=books)
-
     name = request.args.get("name")   #this is for the signin if the is no user yet
     if name:
         signin(name)
