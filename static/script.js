@@ -1,4 +1,4 @@
-
+//take the input with the id of "name" from the index.html file.
   const userInput = document.getElementById("name");
   const btn = document.getElementById("btn");
   const divForAppend = document.getElementById("appendName");
@@ -14,3 +14,9 @@
       userInput.value = "";
     }
   });
+
+  window.onload = function() {
+    if (localStorage.getItem("name")) {
+      window.location.href = "/home";
+    }
+  };

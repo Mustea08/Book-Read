@@ -37,8 +37,14 @@ def signin(name):
     write_file.close()
     return content
 
+
 @app.route("/")
 def index():
+    return render_template("index.html")
+
+# ====================================
+@app.route("/home")
+def home():
     read_signin = open("./files/signin.txt")
     data = read_signin.read()
     read_signin.close()
@@ -46,15 +52,16 @@ def index():
     data_list.pop()
     books = read_json()
 
-    if data.strip() !="": #if there is already name in the file render home.html
-        return render_template("home.html" , data=data, formatted_datetime=formatted_datetime, books=books)
+    # if data.strip() !="": #if there is already name in the file render home.html
+    #     return render_template("home.html" , data=data, formatted_datetime=formatted_datetime, books=books)
 
     name = request.args.get("name")   #this is for the signin if the is no user yet
     if name:
         signin(name)
         return render_template("home.html" , name=name, formatted_datetime=formatted_datetime, books=books)
 
-    return render_template("index.html")
+    return render_template("home.html" , data=data_list[len(data_list) -1], formatted_datetime=formatted_datetime, books=books)
+
 
 # ==================================
 @app.route('/<path:pdf_book>')
