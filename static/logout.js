@@ -1,13 +1,6 @@
 const logout = document.getElementById("logout");
 // ==for the hamburger button icon
 let hamburgerBtn = document.getElementById("btn");
-
-logout.addEventListener("click", () => {
-  // remove the name item from local storage when click on log out button
-  localStorage.removeItem("name");
-  window.location.href = "/";
-});
-
 const closebutton = document.getElementById("bars");
 let x = true;
 
@@ -22,3 +15,15 @@ hamburgerBtn.addEventListener("click", () => {
     closebutton.classList.add("fa-regular", "fa-x");
   }
 });
+
+logout.addEventListener("click", () => {
+  // remove the name item from local storage when click on log out button
+  localStorage.removeItem("name");
+  window.location.href = "/";
+});
+
+window.onload = function() {
+  if (!localStorage.getItem("name")) {
+    window.location.href = "/";
+  }
+};
