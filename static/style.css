@@ -249,7 +249,7 @@ nav a{
 
 /* ====================================================
 ==================Media qurey========================= */
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 732px) {
   .box{
     height: auto;
   }
