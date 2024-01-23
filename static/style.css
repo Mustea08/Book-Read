@@ -292,7 +292,10 @@ nav a{
     padding: 0 10px;
   }
 
-  footer.home-foot{
+  footer{
     flex-direction: column;
+  }
+  footer nav{
+    margin: 1rem 0;
   }
 }
