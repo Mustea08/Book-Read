@@ -8,15 +8,18 @@ formatted_datetime = current_datetime.strftime("%Y-%m-%d %H:%M")
 
 # class to bring data form the json file
 class Book:
-    def __init__(self, id, image, disc, title, author, pdfBook):
+    def __init__(self, id, image, disc, title, author, pdf_book, price):
         self.id = id
         self.title = title
         self.author = author
         self.image = image
         self.disc = disc
-        self.pdfBook = pdfBook
+        self.pdfBook = pdf_book
+        self.price = price
     def writer(self):
         return f" Author: {self.author}"
+    def prices(self):
+        return f"Price: {self.price}"
 
 # function that reads data from a JSON file
 def read_json():
@@ -25,7 +28,7 @@ def read_json():
     file.close()
     books = []
     for book in data_book:
-        new_book = Book(book['id'],book['image'],book['disc'], book['title'], book['author'], book['pdfBook'])
+        new_book = Book(book['id'],book['image'],book['disc'], book['title'], book['author'], book['pdf_book'], book['price'])
         books.append(new_book)
     return books
 
