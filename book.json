@@ -5,7 +5,8 @@
     "author": "D.Annand and H.Dauderis",
     "image": "/static/images/introductionToFinancial.png",
     "disc": "Financial Accounting is the process of recording, summarizing and reporting transactions and revenue-expense generations in a time period",
-    "pdfBook": "/book1.pdf"
+    "pdf_book": "/book1.pdf",
+    "price" : 200
   },
   {
     "id": 1,
@@ -13,7 +14,8 @@
     "author": "Marcus Tullius Cicero",
     "image": "/static/images/hTw.jpg",
     "disc": "This book teaches you a better way to win arguments without quarreling, squabbling, tussling, wrangling, bickering, raising your voice, losing your cool, or coming to blows.",
-    "pdfBook": "/book2.pdf"
+    "pdf_book": "/book2.pdf",
+    "price" : 265
   },
   {
     "id": 2,
@@ -21,7 +23,8 @@
     "author": "John C.Maxwell",
     "image": "/static/images/hSpT.jpg",
     "disc": "Successful people often share certain thought patterns and attitudes that contribute to their achievements. They tend to have a proactive mindset, focusing on solutions rather than dwelling on problems.",
-    "pdfBook": "/book3.pdf"
+    "pdf_book": "/book3.pdf",
+    "price" : 199
   },
   {
     "id": 3,
@@ -29,7 +32,8 @@
     "author": "Julian Shapiro",
     "image": "/static/images/animationJs.png",
     "disc": "JavaScript animation can be an intimidating subject to tackle. Julian does an excellent job of presenting the material in this book",
-    "pdfBook": "/book4.pdf"
+    "pdf_book": "/book4.pdf",
+    "price" : 300
   },
   {
     "id": 4,
@@ -37,7 +41,8 @@
     "author": "Richard Shepherd",
     "image": "/static/images/accessVBG.png",
     "disc": "In Access, programming is the process of adding functionality to your database by using Access macros or Visual Basic for Applications (VBA) code.",
-    "pdfBook": "/book5.pdf"
+    "pdf_book": "/book5.pdf",
+    "price" : 200
   },
   {
     "id": 5,
@@ -45,7 +50,8 @@
     "author": "Wallace Wang",
     "image": "/static/images/beginnigP.png",
     "disc": "Beginning Programming for Dummies shows you how computer programming works without all the technical details or hard programming language.",
-    "pdfBook": "/book6.pdf"
+    "pdf_book": "/book6.pdf",
+    "price" : 250
   },
   {
     "id": 6,
@@ -53,7 +59,8 @@
     "author": "Robert T.Kiyosaki",
     "image": "/static/images/richDad.jpg",
     "disc": "April 2017 marks 20 years since Robert Kiyosaki's Rich Dad Poor Dad first made waves in the Personal Finance arena. It has since become the #1 Personal Finance book of all time . translated into dozens of languages and sold around the world.",
-    "pdfBook": "/richDad-poorDad.pdf"
+    "pdf_book": "/richDad-poorDad.pdf",
+    "price" : 230
   },
   {
     "id": 7,
@@ -61,7 +68,8 @@
     "author": "Adam Grant",
     "image": "/static/images/giveAndTake.jpg",
     "disc": "Give and Take just might be the most important book of this young century. As insightful and entertaining as Malcolm Gladwell at his best, this book has profound implications for how we manage our careers",
-    "pdfBook": "/give-and-take.pdf"
+    "pdf_book": "/give-and-take.pdf",
+    "price" : 200
   },
   {
     "id": 8,
@@ -69,6 +77,7 @@
     "author": "Jhon E.Grayson",
     "image": "/static/images/pythonThinker.png",
     "disc": "Python offers multiple options for developing GUI (Graphical User Interface). Out of all the GUI methods, tkinter is the most commonly used method.",
-    "pdfBook": "/book7.pdf"
+    "pdf_book": "/book7.pdf",
+    "price" : 209
   }
 ]
