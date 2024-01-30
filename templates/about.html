@@ -1,55 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends "base.html"%}
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="shortcut icon" href="../static/images/logo.png" type="image/x-icon">
-  <title>About us</title>
-  <!-- font awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <!-- bootstrap -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
-  <link rel="stylesheet" href="../static/style.css" />
-</head>
-
-<body>
-  <div class="container-fluid bg-dark">
-    <nav class="navbar navbar-expand-lg " data-aos="fade-down" data-aos-duration="1000">
-      <div class="container text-light">
-        <a class="navbar-brand" href="/home">
-          <h2 class="text-light">Open<span>Reads</span></h2>
-        </a>
-        <button class="navbar-toggler border-0 opacity-1" type="button" data-bs-toggle="collapse" id="btn"
-          data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
-          aria-label="Toggle navigation">
-          <i class="fa-solid fa-bars" style="color: #0dd7cd; font-size: 50px;" id="bars"></i>
-        </button>
-        <div class="collapse navbar-collapse " id="navbarNavDropdown">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item">
-              <a class="nav-link text-light" href="/home">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-light" href="/about">About</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-light" href="/testimony">Testimony</a>
-            </li>
-          </ul>
-          <b id="appendName" class="nav-item ms-auto">
-            <i class="fa-regular fa-user"></i>
-          </b>
-          <button id="logout" class="btn btn-danger nav-item ms-1 text-light py-2">Logout</button>
-        </div>
-      </div>
-    </nav>
-  </div>
-
-
+{% block content%}
   <div class="about">
     <h1>ABOUT~US</h1>
   </div>
@@ -114,24 +65,27 @@
       </div>
       <div class="col-11 col-md-9">
         <label for="validationCustom01" class="form-label">First name</label>
-        <input type="text" name="userName" class="form-control form-control-lg" id="validationCustom01" minlength="3" required>
+        <input type="text" name="userName" class="form-control form-control-lg" id="validationCustom01" minlength="3"
+          required>
         <div class="invalid-feedback">
-          Please enter your name
+          Please enter your name! with at least 3 characters.
         </div>
       </div>
       <div class="col-11 col-md-9">
         <label for="validationCustom03" class="form-label">Email address</label>
-        <input type="email" name="email" class="form-control form-control-lg" id="validationCustom03" required>
+        <input type="email" name="email" class="form-control form-control-lg" id="validationCustom03"
+          pattern="[a-z0-9._%+\-]+@[a-z.\-]+\.[a-z]{2,}$" required>
         <div class="invalid-feedback">
-          Please enter your email address
+          Please enter your email correctely and after <b>(@)</b> should be only letters! <br>
+          Example: example@gmail.com
         </div>
       </div>
       <div class="col-11 col-md-9">
         <label for="validationCustom02" class="form-label">Leave a message here</label>
-        <textarea type="text" name="message" class="form-control" id="validationCustom02" minlength="20" style="height: 100px"
-          required></textarea>
+        <textarea type="text" name="message" class="form-control" id="validationCustom02" minlength="15"
+          style="height: 100px" required></textarea>
         <div class="invalid-feedback">
-          Please enter your message
+          Please enter your message at least 15 characters long.
         </div>
       </div>
       <div class="col-11 col-md-9">
@@ -140,27 +94,8 @@
     </form>
   </div>
 
+{%  endblock %}
 
-  <footer>
-    <a href="/home">
-      <h2>Open<span>Reads</span></h2>
-    </a>
-    <nav>
-      <a href="/home">Home</a>
-      <a href="/about">About</a>
-      <a href="/testimony">Testimony</a>
-    </nav>
-    <div class="media">
-      <a href="https://facebook.com" target="_blank"><i class="fa-brands fa-facebook fa-2x"></i></a>
-      <a href="https://instagram.com" target="_blank"><i class="fa-brands fa-instagram fa-2x"></i></a>
-      <a href="https://whatsapp.com" target="_blank"><i class="fa-brands fa-whatsapp fa-2x"></i></a>
-    </div>
-  </footer>
-  <script src="../static/readName.js"></script>
-  <script src="../static/logout.js"></script>
+{% block scripts %}
   <script src="../static/formHandler.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-    crossorigin="anonymous"></script>
-</body>
-</html>
+{%  endblock %}
