@@ -25,16 +25,17 @@
         <a href="/#login" class="start">Start</a>
       </div>
       <div class="login" id="login">
+        <p class="invalid">invalid input ! please enter your username</p>
         <h3>Login</h3>
         <form action="/home" method="">
           <label for="name">username:</label><br>
-          <input type="text" id="name" name="name" required><br>
+          <input type="text" id="name" name="name" minlength="3" required><br>
           <input type="submit" value="Enter" id="btn">
         </form>
       </div>
     </div>
   </div>
-  <script src="../static/script.js"></script>
+  <script src="../static/setName.js"></script>
 </body>
 
 </html>
