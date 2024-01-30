@@ -2,22 +2,24 @@ const textArea = document.getElementById("textArea");
 const userInput = document.getElementById("userName");
 const submitBtn = document.getElementById("submitBtn");
 const parent = document.getElementById("parent");
+const invalidName = document.querySelector(".invalidName");
+const invalidFeedback = document.querySelector(".invalidFeedback");
 
 // testimony
 submitBtn.addEventListener("click", () => {
   const nameValue = userInput.value.trim();
   const feedBack = textArea.value.trim();
-  if (nameValue != "" && feedBack != "") {
+  if (nameValue.length > 2 && feedBack.length > 9) {
     const div = document.createElement("div");
     const div2 = document.createElement("div");
     const h5 = document.createElement("h5");
     const p = document.createElement("p");
     div.className = "col-md-4 col-sm-12 my-1";
     div2.className = "card p-2 text-center";
-    let random = (Math.random() * 10000).toFixed();
+    let random = localStorage.length + 1;
     // store data to local storage
     localStorage.setItem(
-       "data" + random ,
+      "data" + random,
       JSON.stringify({ name: nameValue, feedback: feedBack })
     );
     h5.innerText = "-" + nameValue;
@@ -25,12 +27,25 @@ submitBtn.addEventListener("click", () => {
     div2.append(p, h5);
     div.appendChild(div2);
     parent.appendChild(div);
-  }else{alert('please provide your name and feedback ')}
-  userInput.value = "";
-  textArea.value = "";
+    userInput.value = "";
+    textArea.value = "";
+  } else {
+    if (!nameValue || nameValue.length  <= 2) {
+      invalidName.style.display = "block";
+    }
+    setTimeout(() => {
+      invalidName.style.display = "none";
+    }, 5000);
+    if (!feedBack  || feedBack.length <= 9) {
+      invalidFeedback.style.display = "block";
+    }
+    setTimeout(() => {
+      invalidFeedback.style.display = "none";
+    }, 5000);
+  }
 });
 
-//displaying the the feedback in the testimony page 
+//displaying the the feedback in the testimony page
 for (let i = 0; i < localStorage.length; i++) {
   const div = document.createElement("div");
   const div2 = document.createElement("div");
