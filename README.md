@@ -27,20 +27,25 @@ Make sure you have the following installed on your machine:
 - [] It uses `datetime` Module.
 - [] It uses a class for the project that have both properties and methods.
  - the class Book is used for creating a book object.
-   - app.py.
-   - line 10.
+   - py/models.py.
+   - line 2.
  - It consist of properties like : id, author, title, image...
- - It also consist of a method called : writer().
- - It uses a methond in the app.py file line 18.
+ - It also consist of a method called
+   - writer().
+   - price()
+ - File name and line numbers where the methods are used:
+   - file name : templates/home.html
+   - line number: 13 and 14
 - [] It makes use of JavaScript in the front end and uses the localStorage of the web browser.
 - [] It uses modern JavaScript (for example, let and const rather than var).
 - [] It makes use of the reading and writing to the same file feature.
-- [] It contains conditional statements.
+- [] It uses conditional statements.
   - testimony.js file.
-  - line 10.
-- [] It contains loops.
+  - line 12.
+- [] It uses loops.
   - testimony.js file.
-  - line 33.
+  - line 49.
+- [] It lets the user enter a value in a text box at some point.
 - [] It doesn't generate any error message even if the user enters a wrong input.
 - [] It is styled using CSS.
 - [] The code follows the code and style conventions as introduced in the course, is fully documented using comments and doesn't contain unused or experimental code.
