@@ -77,6 +77,13 @@
   background: #1d1c1f;
   color: #f2f3f3;
 }
+.login .invalid{
+  display: none;
+  padding: .5rem;
+  border-radius: 8px;
+  background: #ff6b6b;
+  color: white;
+}
 
 /* ==========================home.html page==================================
 ============================================================================== */
@@ -172,6 +179,9 @@ nav a{
   text-transform: lowercase;
   line-height: 20px;
   margin: 25px 0;
+}
+.eachbook .price{
+  text-decoration: line-through;
 }
 .eachbook .links{
   margin-top: 20px;
@@ -269,6 +279,12 @@ nav a{
 .testimony{
   width: 100%;
   background: linear-gradient( #343a40,#0dd7cd, #94bcee);
+}
+.testimony .invalidName,
+.testimony .invalidFeedback{
+  color:#ff6c6c !important;
+  display: none;
+  padding: .5rem;
 }
 
 /* ====================================================
