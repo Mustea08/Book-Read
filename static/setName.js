@@ -1,20 +1,22 @@
 //take the input with the id of "name" from the index.html file.
-const userInput = document.getElementById("name");
-const btn = document.getElementById("btn");
-const invalid = document.querySelector(".invalid");
+const userName = document.getElementById("name");
+const loginBtn = document.getElementById("btn");
+const displayErrorMsg = document.querySelector(".invalid");
 
-btn.addEventListener("click", (e) => {
-  const userName = userInput.value.trim();
-  if (userName !== "" && /^[a-zA-Z]+$/.test(userName)) {
-    localStorage.setItem("name", userName);
+function  handleLogin(e) {
+  const username = userName.value.trim();
+  if (username !== "" && /^[a-zA-Z]+$/.test(username)) {
+    localStorage.setItem("name", username);
   } else {
     e.preventDefault();
-    invalid.style.display = "block";
+    displayErrorMsg.style.display = "block";
     setTimeout(() => {
-      invalid.style.display = "none";
+      displayErrorMsg.style.display = "none";
     }, 3000);
   }
-});
+}
+
+loginBtn.addEventListener("click", handleLogin);
 
 window.onload = function () {
   if (localStorage.getItem("name")) {
