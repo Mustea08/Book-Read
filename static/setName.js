@@ -3,6 +3,7 @@ const userName = document.getElementById("name");
 const loginBtn = document.getElementById("btn");
 const displayErrorMsg = document.querySelector(".invalid");
 
+// function that handles the the login in the index page
 function  handleLogin(e) {
   const username = userName.value.trim();
   if (username !== "" && /^[a-zA-Z]+$/.test(username)) {

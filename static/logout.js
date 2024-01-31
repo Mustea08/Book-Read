@@ -4,6 +4,7 @@ let hamburgerBtn = document.getElementById("btn");
 const bars = document.getElementById("bars");
 let clickedBars = false;
 
+// function  to show/hide menu when clicking on the hamburger button.
 function handelBars(){
   if (clickedBars) {
     bars.classList.remove("fa-regular", "fa-x");

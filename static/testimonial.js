@@ -5,7 +5,7 @@ const parentContainer = document.getElementById("parent");
 const invalidName = document.querySelector(".invalidName");
 const invalidFeedback = document.querySelector(".invalidFeedback");
 
-// testimony
+// function that takes a user name and feedback message from a user and store them in the localStorage.
 function  addTestimony() {
   const nameValue = inputName.value.trim();
   const feedback = inputFeedback.value.trim();
@@ -47,7 +47,7 @@ function  addTestimony() {
 
 submitBtn.addEventListener("click", addTestimony);
 
-//displaying the the feedback in the testimony page
+// function that takes the username and the feedback from the localStorage and displays them in the testimony page.
 function displayTestimony(){
   for (let index = 0; index < localStorage.length; index++) {
     const testimonyParent = document.createElement("div");

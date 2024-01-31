@@ -5,11 +5,11 @@ from py.helpers import read_json, sign_in
 current_datetime = datetime.datetime.now()
 formatted_datetime = current_datetime.strftime("%Y-%m-%d %H:%M")
 
+# route for the index page
 def index():
     return render_template("index.html")
 
-# ====================================
-
+# route for the home page.
 def home():
     read_sign_in = open("./files/sign_in.txt")
     data = read_sign_in.read()
@@ -27,17 +27,14 @@ def home():
 
 
 # ==================================
-
+# route for the pdf book
 def read_pdf(pdf_book):
     return send_from_directory('books', pdf_book)
-# =====================================
 
 # route for About us page
-
 def about():
     return render_template("about.html")
 
-# route for testimony
-
+# route for testimony page
 def testimony():
     return render_template("testimony.html")
