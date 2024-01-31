@@ -13,9 +13,9 @@ def read_json():
     return books
 
 
-# signin file to write username in the sign in.txt
+# sign_in file to write username in the sign in.txt
 def sign_in(name):
-    write_file = open("./files/signin.txt", "+a")
+    write_file = open("./files/sign_in.txt", "+a")
     content = write_file.write(name+ "\n")
     write_file.close()
     return content

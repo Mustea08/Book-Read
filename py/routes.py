@@ -11,14 +11,14 @@ def index():
 # ====================================
 
 def home():
-    read_sign_in = open("./files/signin.txt")
+    read_sign_in = open("./files/sign_in.txt")
     data = read_sign_in.read()
     read_sign_in.close()
     data_list = data.split("\n")
     data_list.pop()
     books = read_json()
 
-    name = request.args.get("name")   #this is for the signin if the is no user yet
+    name = request.args.get("name")   #this is for the sign_in if the is no user yet
     if name:
         sign_in(name)
         return render_template("home.html" , name=name, formatted_datetime=formatted_datetime, books=books)
