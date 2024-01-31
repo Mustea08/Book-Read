@@ -61,8 +61,6 @@ function callTestimony(){
       const item = JSON.parse(localStorage.getItem(key));
       textFeedback.innerText = item.feedback;
       names.innerText = "-" + item.name;
-      console.log(names);
-      console.log(textFeedback)
       child.append(textFeedback, names);
       subParent.appendChild(child);
       parentContainer.appendChild(subParent);
