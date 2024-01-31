@@ -1,23 +1,24 @@
-const logout = document.getElementById("logout");
+const logOutBtn = document.getElementById("logout");
 // ==for the hamburger button icon
 let hamburgerBtn = document.getElementById("btn");
 const bars = document.getElementById("bars");
-let x = true;
+let clickedBars = false;
 
-hamburgerBtn.addEventListener("click", () => {
-  x = !x;
-  if (x) {
-    // closebutton.classList.remove("fa-rectangle-xmark");
+function handelBars(){
+  if (clickedBars) {
     bars.classList.remove("fa-regular", "fa-x");
     bars.classList.add("fa-solid", "fa-bars");
   } else {
     bars.classList.remove("fa-solid", "fa-bars");
     bars.classList.add("fa-regular", "fa-x");
   }
-});
+  clickedBars = !clickedBars;
+}
 
-logout.addEventListener("click", () => {
-  // remove the name item from local storage when click on log out button
+hamburgerBtn.addEventListener("click", handelBars);
+
+logOutBtn.addEventListener("click", () => {
+  // remove the name item from local storage when click on logout button
   localStorage.removeItem("name");
   window.location.href = "/";
 });
